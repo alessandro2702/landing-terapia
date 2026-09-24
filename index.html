@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+  LANDING PAGE — Terapia Quântica e Espiritual
+  --------------------------------------------------------------------------------
+  Estrutura do projeto:
+    index.html            → página única (este arquivo)
+    404.html              → página de erro
+    assets/css/style.css  → estilos (variáveis de tema no topo)
+    assets/js/main.js     → interações (menu mobile, animações, ano no rodapé)
+    assets/img/           → favicon, imagem de compartilhamento (Open Graph)
+    robots.txt / sitemap.xml / site.webmanifest / .htaccess
+
+  PERSONALIZAÇÃO:
+    Todos os trechos que precisam ser trocados estão marcados com o comentário
+    "EDITAR". Faça uma busca por "EDITAR" e por "seudominio.com.br" antes de publicar.
+    Veja o README.md para o checklist completo.
+================================================================================
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ===================== SEO BÁSICO ===================== -->
+  <!-- EDITAR: título (até ~60 caracteres) — inclua serviço + cidade para SEO local -->
+  <title>Terapia Quântica e Espiritual em Sua Cidade | Luz Interior Terapias</title>
+  <!-- EDITAR: descrição (até ~155 caracteres) — aparece no resultado do Google -->
+  <meta name="description" content="Terapia quântica e espiritual para equilíbrio energético e emocional: Reiki, florais, auriculoterapia, geoterapia e ayurveda. Agende sua sessão.">
+  <meta name="keywords" content="terapia quântica, terapia espiritual, reiki, florais, fitoterapia, auriculoterapia, geoterapia, ayurveda, terapia holística, alinhamento de chakras">
+  <meta name="author" content="Luz Interior Terapias"> <!-- EDITAR -->
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <!-- EDITAR: URL definitiva do site (evita conteúdo duplicado) -->
+  <link rel="canonical" href="https://www.seudominio.com.br/">
+  <meta name="theme-color" content="#1b1433">
+
+  <!-- ===================== OPEN GRAPH (Facebook, WhatsApp, LinkedIn) ===================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Luz Interior Terapias"> <!-- EDITAR -->
+  <meta property="og:title" content="Terapia Quântica e Espiritual | Luz Interior Terapias">
+  <meta property="og:description" content="Reequilíbrio energético, emocional e espiritual com Reiki, florais, auriculoterapia, geoterapia e ayurveda.">
+  <meta property="og:url" content="https://www.seudominio.com.br/">
+  <meta property="og:image" content="https://www.seudominio.com.br/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Terapia Quântica e Espiritual — Luz Interior Terapias">
+
+  <!-- ===================== TWITTER / X ===================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Terapia Quântica e Espiritual | Luz Interior Terapias">
+  <meta name="twitter:description" content="Reequilíbrio energético, emocional e espiritual. Agende sua sessão.">
+  <meta name="twitter:image" content="https://www.seudominio.com.br/assets/img/og-image.jpg">
+
+  <!-- ===================== ÍCONES E MANIFEST ===================== -->
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- ===================== FONTES (Google Fonts) =====================
+       preconnect acelera o carregamento; display=swap evita texto invisível. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===================== ESTILOS ===================== -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- ===================== DADOS ESTRUTURADOS (Schema.org / JSON-LD) =====================
+       Ajudam o Google a entender o negócio (nome, serviços, contato, redes sociais)
+       e podem gerar resultados enriquecidos. Teste em: https://search.google.com/test/rich-results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "@id": "https://www.seudominio.com.br/#negocio",
+    "name": "Luz Interior Terapias",
+    "description": "Terapia quântica e espiritual para reequilíbrio energético, emocional e espiritual.",
+    "url": "https://www.seudominio.com.br/",
+    "image": "https://www.seudominio.com.br/assets/img/og-image.jpg",
+    "logo": "https://www.seudominio.com.br/assets/img/apple-touch-icon.png",
+    "telephone": "+55-11-90000-0000",
+    "email": "contato@seudominio.com.br",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sua Cidade",
+      "addressRegion": "UF",
+      "addressCountry": "BR"
+    },
+    "areaServed": "Sua Cidade e atendimentos online",
+    "sameAs": [
+      "https://www.instagram.com/seuperfil",
+      "https://www.facebook.com/seuperfil",
+      "https://www.youtube.com/@seuperfil"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Terapias",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fitoterapia e Florais" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Geoterapia" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auriculoterapia" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reiki e Imposição de Mãos" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Terapia Ayurveda" } }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é a terapia quântica e espiritual?",
+        "acceptedAnswer": { "@type": "Answer", "text": "É uma prática holística e integrativa que trabalha o equilíbrio energético, emocional e espiritual da pessoa, utilizando técnicas como Reiki, florais, auriculoterapia, geoterapia e ayurveda." }
+      },
+      {
+        "@type": "Question",
+        "name": "A terapia substitui o tratamento médico?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Não. As terapias integrativas são complementares e não substituem diagnóstico, acompanhamento ou tratamento médico e psicológico." }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona a primeira sessão?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A primeira sessão começa com uma conversa acolhedora para entender o seu momento e seus objetivos. A partir disso, as técnicas mais adequadas são escolhidas para você." }
+      },
+      {
+        "@type": "Question",
+        "name": "Existe atendimento online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sim, algumas práticas podem ser realizadas a distância. Entre em contato para saber quais modalidades estão disponíveis." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===================== RASTREAMENTO (OPCIONAL) =====================
+       Para campanhas de tráfego pago, descomente e preencha os IDs abaixo.
+       ATENÇÃO (LGPD): ao ativar pixels/analytics, adicione um aviso de cookies
+       e uma política de privacidade.
+
+  Google Analytics 4 — troque G-XXXXXXXXXX pelo seu ID:
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  Meta Pixel (Facebook/Instagram Ads) — cole aqui o código gerado no Gerenciador de Eventos.
+  -->
+</head>
+
+<body>
+  <!-- Link de acessibilidade: permite pular direto para o conteúdo via teclado -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ============================================================
+       CABEÇALHO / NAVEGAÇÃO
+       ============================================================ -->
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a href="#topo" class="brand" aria-label="Luz Interior Terapias — início">
+        <!-- Símbolo: flor de lótus estilizada (SVG inline, sem requisição extra) -->
+        <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 12c5 7 7 14 0 26-7-12-5-19 0-26z" />
+          <path d="M32 38c-4-9-11-15-20-16 1 9 8 16 20 16z" />
+          <path d="M32 38c4-9 11-15 20-16-1 9-8 16-20 16z" />
+          <path d="M10 42c7 4 15 5 22 4 7 1 15 0 22-4" fill="none" stroke-width="2.5" stroke-linecap="round" />
+        </svg>
+        <span class="brand-name">Luz Interior <small>Terapias</small></span> <!-- EDITAR -->
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu" class="site-nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="#sobre">A Terapia</a></li>
+          <li><a href="#tratamento">O que tratamos</a></li>
+          <li><a href="#tecnicas">Técnicas</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+          <li><a href="#contato" class="btn btn-sm">Agendar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============================================================
+         HERO — primeira dobra: título principal (H1) + chamada para ação
+         ============================================================ -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="hero-stars" aria-hidden="true"></div>
+      <!-- Mandala decorativa ao fundo -->
+      <svg class="hero-mandala" viewBox="0 0 200 200" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="0.6">
+          <circle cx="100" cy="100" r="96" />
+          <circle cx="100" cy="100" r="72" />
+          <circle cx="100" cy="100" r="48" />
+          <circle cx="100" cy="100" r="24" />
+          <g id="petalas">
+            <ellipse cx="100" cy="52" rx="14" ry="48" />
+            <ellipse cx="100" cy="52" rx="14" ry="48" transform="rotate(45 100 100)" />
+            <ellipse cx="100" cy="52" rx="14" ry="48" transform="rotate(90 100 100)" />
+            <ellipse cx="100" cy="52" rx="14" ry="48" transform="rotate(135 100 100)" />
+            <ellipse cx="100" cy="52" rx="14" ry="48" transform="rotate(180 100 100)" />
+            <ellipse cx="100" cy="52" rx="14" ry="48" transform="rotate(225 100 100)" />
+            <ellipse cx="100" cy="52" rx="14" ry="48" transform="rotate(270 100 100)" />
+            <ellipse cx="100" cy="52" rx="14" ry="48" transform="rotate(315 100 100)" />
+          </g>
+        </g>
+      </svg>
+
+      <div class="container hero-content">
+        <p class="eyebrow">Terapias Integrativas · Presencial e Online</p>
+        <h1 id="hero-titulo">Terapia Quântica <span>e Espiritual</span></h1>
+        <p class="hero-lead">
+          Reequilibre sua energia, suas emoções e seu espírito. Um cuidado holístico
+          para liberar bloqueios, aliviar o estresse e reencontrar a sua luz interior.
+        </p>
+        <div class="hero-actions">
+          <a href="#contato" class="btn">Agende sua sessão</a>
+          <a href="#sobre" class="btn btn-ghost">Conheça a terapia</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SOBRE A TERAPIA — o que é e como funciona a prática
+         ============================================================ -->
+    <section class="section" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">A prática</p>
+          <h2 id="sobre-titulo">O que é a Terapia Quântica e Espiritual</h2>
+          <p>
+            Uma prática holística que integra conceitos de energia e consciência a
+            saberes espirituais ancestrais, com o objetivo de promover o reequilíbrio
+            energético, emocional e espiritual.
+          </p>
+        </header>
+
+        <div class="grid grid-3">
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>
+            </div>
+            <h3>Energia e Consciência</h3>
+            <p>
+              A ideia central é que o corpo e os pensamentos emitem frequências que
+              podem ser ajustadas para dissolver bloqueios e traumas.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2 6 9l6 13 6-13-6-7z"/><path d="M6 9h12"/></svg>
+            </div>
+            <h3>Técnicas Vibracionais</h3>
+            <p>
+              Essências vibracionais, imposição de mãos, cristais e comandos mentais
+              são usados para alinhar o campo sutil da pessoa.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a4.5 4.5 0 0 1 0 9 4.5 4.5 0 0 0 0 9"/></svg>
+            </div>
+            <h3>Visão Holística</h3>
+            <p>
+              Cuida da pessoa de forma completa, unindo mente, emoções e espírito
+              por meio de recursos naturais e integrativos.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRATAMENTO — o que a terapia trabalha (benefícios)
+         ============================================================ -->
+    <section class="section section-alt" id="tratamento" aria-labelledby="tratamento-titulo">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Tratamento</p>
+          <h2 id="tratamento-titulo">Como a terapia pode te ajudar</h2>
+        </header>
+
+        <div class="grid grid-2">
+          <article class="benefit reveal">
+            <span class="benefit-num" aria-hidden="true">01</span>
+            <div>
+              <h3>Desequilíbrios energéticos</h3>
+              <p>Alinhamento dos corpos sutis e dos chakras para remover bloqueios acumulados ao longo do tempo.</p>
+            </div>
+          </article>
+
+          <article class="benefit reveal">
+            <span class="benefit-num" aria-hidden="true">02</span>
+            <div>
+              <h3>Traumas e crenças limitantes</h3>
+              <p>Apoio na limpeza de memórias celulares e na transformação de padrões mentais negativos do passado.</p>
+            </div>
+          </article>
+
+          <article class="benefit reveal">
+            <span class="benefit-num" aria-hidden="true">03</span>
+            <div>
+              <h3>Estresse e ansiedade</h3>
+              <p>Relaxamento profundo, fortalecimento da autoconfiança e alívio de estados emocionais intensos.</p>
+            </div>
+          </article>
+
+          <article class="benefit reveal">
+            <span class="benefit-num" aria-hidden="true">04</span>
+            <div>
+              <h3>Autoconhecimento</h3>
+              <p>Estímulo ao desenvolvimento pessoal e à expansão da percepção espiritual.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TÉCNICAS — principais técnicas utilizadas
+         Para adicionar uma técnica, copie um bloco <article class="card technique">.
+         ============================================================ -->
+    <section class="section" id="tecnicas" aria-labelledby="tecnicas-titulo">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Técnicas</p>
+          <h2 id="tecnicas-titulo">Principais técnicas utilizadas</h2>
+          <p>Cada atendimento é personalizado: as técnicas são combinadas de acordo com o seu momento e as suas necessidades.</p>
+        </header>
+
+        <div class="grid grid-3 techniques">
+          <article class="card technique reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 21c0-9 5-15 15-17-1 10-7 15-15 17z"/><path d="M5 21 14 11"/></svg>
+            </div>
+            <h3>Fitoterapia e Florais</h3>
+            <p>Uso terapêutico de plantas e essências florais para harmonizar emoções e fortalecer o equilíbrio natural.</p>
+          </article>
+
+          <article class="card technique reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 18c3-4 6-6 9-6s6 2 9 6"/><path d="M3 21h18"/><circle cx="12" cy="6" r="2.5"/></svg>
+            </div>
+            <h3>Geoterapia</h3>
+            <p>Aplicação de argilas e elementos da terra que auxiliam na desintoxicação e no reequilíbrio energético.</p>
+          </article>
+
+          <article class="card technique reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 20c-2 0-3-1.5-3-3.5S7 13 7 10a5 5 0 0 1 10 0c0 2.5-2 3.5-2 5.5"/><circle cx="12" cy="10" r="1"/><circle cx="10" cy="14" r="1"/></svg>
+            </div>
+            <h3>Auriculoterapia</h3>
+            <p>Estímulo de pontos específicos da orelha para aliviar tensões, ansiedade e desconfortos.</p>
+          </article>
+
+          <article class="card technique reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 11V5a1.5 1.5 0 0 1 3 0v5M10 10V3.5a1.5 1.5 0 0 1 3 0V10M13 10V5a1.5 1.5 0 0 1 3 0v7c0 5-3 9-7 9-3 0-5-3-6-6l-1-3a1.5 1.5 0 0 1 3-1l1 2"/></svg>
+            </div>
+            <h3>Reiki e Imposição de Mãos</h3>
+            <p>Canalização de energia vital pelas mãos para promover relaxamento, harmonia e bem-estar.</p>
+          </article>
+
+          <article class="card technique reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3c2 3 2 6 0 9-2-3-2-6 0-9z"/><path d="M12 12c-2-3-5-4-8-4 0 3 3 6 8 4zM12 12c2-3 5-4 8-4 0 3-3 6-8 4z"/><path d="M4 17h16M7 21h10"/></svg>
+            </div>
+            <h3>Terapia Ayurveda</h3>
+            <p>Sabedoria milenar indiana que busca o equilíbrio entre corpo, mente e espírito por meio de hábitos e práticas naturais.</p>
+          </article>
+
+          <!-- Card de chamada para ação que completa a grade de 6 -->
+          <article class="card technique card-cta reveal">
+            <h3>Não sabe por onde começar?</h3>
+            <p>Converse comigo e descubra qual combinação de técnicas faz mais sentido para você.</p>
+            <a href="#contato" class="btn btn-sm">Fale comigo</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COMO FUNCIONA — passos do atendimento
+         ============================================================ -->
+    <section class="section section-alt" id="como-funciona" aria-labelledby="passos-titulo">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Atendimento</p>
+          <h2 id="passos-titulo">Como funciona</h2>
+        </header>
+        <ol class="steps">
+          <li class="reveal">
+            <h3>Contato</h3>
+            <p>Envie uma mensagem pelo WhatsApp ou e-mail para tirar dúvidas e agendar.</p>
+          </li>
+          <li class="reveal">
+            <h3>Acolhimento</h3>
+            <p>Uma conversa inicial para entender o seu momento, suas queixas e seus objetivos.</p>
+          </li>
+          <li class="reveal">
+            <h3>Sessão personalizada</h3>
+            <p>Aplicação das técnicas mais indicadas, presencialmente ou a distância.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ — perguntas frequentes (também marcado em JSON-LD no <head>)
+         <details>/<summary> funciona sem JavaScript.
+         ============================================================ -->
+    <section class="section" id="faq" aria-labelledby="faq-titulo">
+      <div class="container container-narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">Dúvidas</p>
+          <h2 id="faq-titulo">Perguntas frequentes</h2>
+        </header>
+
+        <div class="faq">
+          <details class="reveal">
+            <summary>O que é a terapia quântica e espiritual?</summary>
+            <p>É uma prática holística e integrativa que trabalha o equilíbrio energético, emocional e espiritual da pessoa, utilizando técnicas como Reiki, florais, auriculoterapia, geoterapia e ayurveda.</p>
+          </details>
+          <details class="reveal">
+            <summary>A terapia substitui o tratamento médico?</summary>
+            <p>Não. As terapias integrativas são complementares e não substituem diagnóstico, acompanhamento ou tratamento médico e psicológico.</p>
+          </details>
+          <details class="reveal">
+            <summary>Como funciona a primeira sessão?</summary>
+            <p>A primeira sessão começa com uma conversa acolhedora para entender o seu momento e seus objetivos. A partir disso, as técnicas mais adequadas são escolhidas para você.</p>
+          </details>
+          <details class="reveal">
+            <summary>Existe atendimento online?</summary>
+            <p>Sim, algumas práticas podem ser realizadas a distância. Entre em contato para saber quais modalidades estão disponíveis.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTATO E REDES SOCIAIS
+         EDITAR: número do WhatsApp (formato 55 + DDD + número, só dígitos),
+                 e-mail e links das redes sociais.
+         ============================================================ -->
+    <section class="section contact" id="contato" aria-labelledby="contato-titulo">
+      <div class="container contact-inner reveal">
+        <p class="eyebrow">Contato</p>
+        <h2 id="contato-titulo">Dê o primeiro passo para o seu equilíbrio</h2>
+        <p class="contact-lead">Agende sua sessão ou tire suas dúvidas. Será um prazer te acolher.</p>
+
+        <div class="contact-actions">
+          <a class="btn btn-lg" data-track="whatsapp"
+             href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
+             target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.5 2 2.5 4 4.5 4.5l1-1 2 1c-.5 1.5-1.5 2-3 1.5A7 7 0 0 1 9 11c-.5-1.5 0-2.5 1.5-3l1 2z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a class="btn btn-ghost btn-lg" data-track="email" href="mailto:contato@seudominio.com.br?subject=Agendamento%20de%20sess%C3%A3o">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            contato@seudominio.com.br
+          </a>
+        </div>
+
+        <p class="contact-info">
+          <!-- EDITAR: cidade / endereço de atendimento -->
+          Atendimento presencial em <strong>Sua Cidade – UF</strong> e online para todo o Brasil.
+        </p>
+
+        <ul class="social" aria-label="Redes sociais">
+          <li>
+            <a href="https://www.instagram.com/seuperfil" target="_blank" rel="noopener" aria-label="Instagram" data-track="instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="fill"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/seuperfil" target="_blank" rel="noopener" aria-label="Facebook" data-track="facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@seuperfil" target="_blank" rel="noopener" aria-label="YouTube" data-track="youtube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z" class="fill"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       RODAPÉ — inclui aviso legal (importante para anúncios e ética profissional)
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="disclaimer">
+        As terapias integrativas e complementares não substituem diagnóstico ou
+        tratamento médico e psicológico. Em caso de problemas de saúde, procure um
+        profissional habilitado.
+      </p>
+      <p>&copy; <span id="ano">2026</span> Luz Interior Terapias. Todos os direitos reservados.</p> <!-- EDITAR -->
+    </div>
+  </footer>
+
+  <!-- Botão flutuante de WhatsApp (principal canal de conversão). EDITAR: número -->
+  <a class="whatsapp-float" data-track="whatsapp-flutuante"
+     href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
+     target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.5 2 2.5 4 4.5 4.5l1-1 2 1c-.5 1.5-1.5 2-3 1.5A7 7 0 0 1 9 11c-.5-1.5 0-2.5 1.5-3l1 2z"/></svg>
+  </a>
+
+  <!-- Script carregado com "defer": não bloqueia a renderização da página -->
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

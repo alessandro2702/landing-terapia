@@ -1,0 +1,6 @@
+# robots.txt — permite a indexação de todo o site
+# EDITAR: troque seudominio.com.br pelo seu domínio
+User-agent: *
+Allow: /
+
+Sitemap: https://www.seudominio.com.br/sitemap.xml
