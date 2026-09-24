@@ -5,7 +5,6 @@
   via "ErrorDocument 404 /404.html").
   Usa o mesmo style.css do index; os estilos exclusivos desta página ficam na
   seção "12. PÁGINA 404" do style.css.
-  EDITAR: nome do negócio e número do WhatsApp (mesmos do index.html).
 ================================================================================
 -->
 <html lang="pt-BR">
@@ -20,16 +19,10 @@
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Fontes auto-hospedadas: carregadas pelos @font-face do style.css -->
 
-  <!-- Caminho ABSOLUTO (/assets/...): necessário porque o servidor pode exibir
-       esta página em qualquer URL, ex.: /pasta/inexistente/pagina -->
   <link rel="stylesheet" href="/assets/css/style.css" id="css-principal">
   <script>
-    // Ao abrir o arquivo direto no computador (file://), caminhos absolutos
-    // não funcionam. Nesse caso, troca para caminho relativo — só para pré-visualização.
     if (location.protocol === 'file:') {
       document.getElementById('css-principal').href = 'assets/css/style.css';
     }
@@ -94,9 +87,8 @@
 
       <div class="hero-actions">
         <a href="/" class="btn">Voltar ao início</a>
-        <!-- EDITAR: número do WhatsApp -->
         <a class="btn btn-ghost"
-           href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
+           href="https://wa.me/5561998837963?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
            target="_blank" rel="noopener">Falar no WhatsApp</a>
       </div>
 
@@ -112,7 +104,7 @@
 
   <footer class="site-footer error-footer">
     <div class="container">
-      <p>&copy; <span id="ano">2026</span> Luz Interior Terapias.</p> <!-- EDITAR -->
+      <p>&copy; <span id="ano">2026</span> Luz Interior Terapias.</p>
     </div>
   </footer>
 

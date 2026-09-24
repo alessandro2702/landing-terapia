@@ -10,11 +10,6 @@
     assets/js/main.js     → interações (menu mobile, animações, ano no rodapé)
     assets/img/           → favicon, imagem de compartilhamento (Open Graph)
     robots.txt / sitemap.xml / site.webmanifest / .htaccess
-
-  PERSONALIZAÇÃO:
-    Todos os trechos que precisam ser trocados estão marcados com o comentário
-    "EDITAR". Faça uma busca por "EDITAR" e por "seudominio.com.br" antes de publicar.
-    Veja o README.md para o checklist completo.
 ================================================================================
 -->
 <html lang="pt-BR">
@@ -23,21 +18,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- ===================== SEO BÁSICO ===================== -->
-  <!-- EDITAR: título (até ~60 caracteres) — inclua serviço + cidade para SEO local -->
   <title>Terapia Quântica e Espiritual em Sua Cidade | Luz Interior Terapias</title>
-  <!-- EDITAR: descrição (até ~155 caracteres) — aparece no resultado do Google -->
   <meta name="description" content="Terapia quântica e espiritual para equilíbrio energético e emocional: Reiki, florais, auriculoterapia, geoterapia e ayurveda. Agende sua sessão.">
   <meta name="keywords" content="terapia quântica, terapia espiritual, reiki, florais, fitoterapia, auriculoterapia, geoterapia, ayurveda, terapia holística, alinhamento de chakras">
-  <meta name="author" content="Luz Interior Terapias"> <!-- EDITAR -->
+  <meta name="author" content="Luz Interior Terapias">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <!-- EDITAR: URL definitiva do site (evita conteúdo duplicado) -->
   <link rel="canonical" href="https://www.seudominio.com.br/">
   <meta name="theme-color" content="#1b1433">
 
   <!-- ===================== OPEN GRAPH (Facebook, WhatsApp, LinkedIn) ===================== -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="Luz Interior Terapias"> <!-- EDITAR -->
+  <meta property="og:site_name" content="Luz Interior Terapias">
   <meta property="og:title" content="Terapia Quântica e Espiritual | Luz Interior Terapias">
   <meta property="og:description" content="Reequilíbrio energético, emocional e espiritual com Reiki, florais, auriculoterapia, geoterapia e ayurveda.">
   <meta property="og:url" content="https://www.seudominio.com.br/">
@@ -58,11 +50,13 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <!-- ===================== FONTES (Google Fonts) =====================
-       preconnect acelera o carregamento; display=swap evita texto invisível. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- ===================== FONTES (auto-hospedadas em assets/fonts/) =====================
+       Servidas do próprio domínio: sem requisição bloqueante a terceiros e sem
+       envio do IP do visitante ao Google (LGPD). O preload inicia o download
+       junto com o HTML; os @font-face ficam no início do style.css. -->
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-500-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/nunito-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- ===================== ESTILOS ===================== -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -172,7 +166,7 @@
           <path d="M32 38c4-9 11-15 20-16-1 9-8 16-20 16z" />
           <path d="M10 42c7 4 15 5 22 4 7 1 15 0 22-4" fill="none" stroke-width="2.5" stroke-linecap="round" />
         </svg>
-        <span class="brand-name">Luz Interior <small>Terapias</small></span> <!-- EDITAR -->
+        <span class="brand-name">Luz Interior <small>Terapias</small></span>
       </a>
 
       <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
@@ -453,8 +447,6 @@
 
     <!-- ============================================================
          CONTATO E REDES SOCIAIS
-         EDITAR: número do WhatsApp (formato 55 + DDD + número, só dígitos),
-                 e-mail e links das redes sociais.
          ============================================================ -->
     <section class="section contact" id="contato" aria-labelledby="contato-titulo">
       <div class="container contact-inner reveal">
@@ -464,7 +456,7 @@
 
         <div class="contact-actions">
           <a class="btn btn-lg" data-track="whatsapp"
-             href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
+             href="https://wa.me/5561998837963?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
              target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.5 2 2.5 4 4.5 4.5l1-1 2 1c-.5 1.5-1.5 2-3 1.5A7 7 0 0 1 9 11c-.5-1.5 0-2.5 1.5-3l1 2z"/></svg>
             Agendar pelo WhatsApp
@@ -476,8 +468,7 @@
         </div>
 
         <p class="contact-info">
-          <!-- EDITAR: cidade / endereço de atendimento -->
-          Atendimento presencial em <strong>Sua Cidade – UF</strong> e online para todo o Brasil.
+          Atendimento presencial em <strong>Brasília – DF</strong> e online para todo o Brasil.
         </p>
 
         <ul class="social" aria-label="Redes sociais">
@@ -486,7 +477,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="fill"/></svg>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="https://www.facebook.com/seuperfil" target="_blank" rel="noopener" aria-label="Facebook" data-track="facebook">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8z"/></svg>
             </a>
@@ -495,7 +486,7 @@
             <a href="https://www.youtube.com/@seuperfil" target="_blank" rel="noopener" aria-label="YouTube" data-track="youtube">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z" class="fill"/></svg>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </section>
@@ -511,16 +502,17 @@
         tratamento médico e psicológico. Em caso de problemas de saúde, procure um
         profissional habilitado.
       </p>
-      <p>&copy; <span id="ano">2026</span> Luz Interior Terapias. Todos os direitos reservados.</p> <!-- EDITAR -->
+      <p>&copy; <span id="ano">2026</span> Luz Interior Terapias. Todos os direitos reservados.</p>
     </div>
+    <!-- Botão flutuante de WhatsApp (principal canal de conversão). Fica dentro do
+         <footer> para pertencer a um "landmark" (acessibilidade); na tela é fixo. -->
+    <a class="whatsapp-float" data-track="whatsapp-flutuante"
+       href="https://wa.me/5561998837963?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
+       target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.5 2 2.5 4 4.5 4.5l1-1 2 1c-.5 1.5-1.5 2-3 1.5A7 7 0 0 1 9 11c-.5-1.5 0-2.5 1.5-3l1 2z"/></svg>
+    </a>
   </footer>
 
-  <!-- Botão flutuante de WhatsApp (principal canal de conversão). EDITAR: número -->
-  <a class="whatsapp-float" data-track="whatsapp-flutuante"
-     href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
-     target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.5 2 2.5 4 4.5 4.5l1-1 2 1c-.5 1.5-1.5 2-3 1.5A7 7 0 0 1 9 11c-.5-1.5 0-2.5 1.5-3l1 2z"/></svg>
-  </a>
 
   <!-- Script carregado com "defer": não bloqueia a renderização da página -->
   <script src="assets/js/main.js" defer></script>

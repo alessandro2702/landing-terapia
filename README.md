@@ -15,6 +15,7 @@ Site estático de página única (HTML + CSS + JavaScript puro, sem build e sem 
 └── assets/
     ├── css/style.css     # Estilos — variáveis de tema no topo do arquivo
     ├── js/main.js        # Menu mobile, animações, ano do rodapé, rastreamento
+    ├── fonts/            # Cormorant Garamond e Nunito Sans (woff2, licença OFL)
     └── img/
         ├── favicon.svg / favicon-32.png / apple-touch-icon.png
         ├── icon-192.png / icon-512.png   # ícones do manifest
@@ -87,7 +88,7 @@ Para testar localmente: `python -m http.server 8000` na pasta e abrir `http://lo
 - Open Graph e Twitter Card para prévia bonita no WhatsApp, Instagram, Facebook e LinkedIn.
 - Dados estruturados Schema.org (`HealthAndBeautyBusiness` com catálogo de serviços, e `FAQPage`).
 - `robots.txt` e `sitemap.xml`.
-- Performance: sem frameworks, JS com `defer`, ícones em SVG inline, fontes com `preconnect` + `display=swap`, compressão e cache via `.htaccess`.
+- Performance: sem frameworks, JS com `defer`, ícones em SVG inline, fontes auto-hospedadas (`assets/fonts/`, subconjunto latin) com `preload` + `font-display: swap`, compressão e cache via `.htaccess`.
 - Acessibilidade: link "pular para o conteúdo", foco visível, `aria-*` no menu, respeito a `prefers-reduced-motion`. O site funciona sem JavaScript.
 
 ## Depois de publicar

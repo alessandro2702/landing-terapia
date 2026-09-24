@@ -2,6 +2,7 @@
    Terapia Quântica e Espiritual — Folha de estilos
    --------------------------------------------------------------------------
    Índice:
+     0. Fontes (@font-face, arquivos em assets/fonts/)
      1. Variáveis de tema (cores, fontes, espaçamentos)  ← personalize aqui
      2. Reset e base
      3. Utilitários (container, botões, títulos)
@@ -18,6 +19,39 @@
    ========================================================================== */
 
 
+/* 0. FONTES
+   --------------------------------------------------------------------------
+   Auto-hospedadas (licença SIL OFL, ver assets/fonts/LICENSE-OFL.txt).
+   Apenas o subconjunto "latin" (cobre todo o português). As versões
+   variáveis cobrem vários pesos em um único arquivo:
+     - Cormorant Garamond variável → pesos 300–700 (normal)
+     - Cormorant Garamond 500 itálico → destaques em itálico
+     - Nunito Sans variável → pesos 200–1000 (texto)
+   font-display: swap → o texto aparece na hora com a fonte do sistema.
+   ========================================================================== */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/cormorant-garamond-latin-var.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url("../fonts/nunito-sans-latin-var.woff2") format("woff2");
+}
+
+
 /* 1. VARIÁVEIS DE TEMA
    ========================================================================== */
 :root {
@@ -27,7 +61,8 @@
   --c-violet:       #6b4fa8;   /* destaque secundário */
   --c-lavender:     #c9b8ec;   /* textos claros em fundo escuro */
   --c-gold:         #d9b56a;   /* destaque principal / botões */
-  --c-gold-dark:    #b8924a;
+  --c-gold-dark:    #b8924a;   /* só para fundos/gradientes */
+  --c-gold-text:    #86621f;   /* dourado para TEXTO em fundo claro (contraste ≥ 4.5:1, WCAG AA) */
   --c-cream:        #faf6ef;   /* fundo claro */
   --c-cream-2:      #f2ebdf;   /* fundo claro alternado */
   --c-text:         #2b2440;   /* texto principal */
@@ -125,7 +160,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   font-weight: 700;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--c-gold-dark);
+  color: var(--c-gold-text);
   margin-bottom: .75rem;
 }
 
@@ -413,7 +448,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   font-size: 2.2rem;
   font-style: italic;
   line-height: 1;
-  color: var(--c-gold-dark);
+  color: var(--c-gold-text);
 }
 
 /* Passos numerados automaticamente via contador CSS */
@@ -440,7 +475,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border: 1.5px solid var(--c-gold);
   font-family: var(--f-display);
   font-size: 1.6rem;
-  color: var(--c-gold-dark);
+  color: var(--c-gold-text);
   background: var(--c-cream);
 }
 .steps p { color: var(--c-text-soft); max-width: 320px; margin-inline: auto; }
@@ -467,7 +502,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   right: 1.5rem; top: 50%;
   transform: translateY(-50%);
   font-size: 1.5rem;
-  color: var(--c-gold-dark);
+  color: var(--c-gold-text);
   transition: transform .3s ease;
 }
 .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
@@ -535,7 +570,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   text-align: center;
 }
 .site-footer p { margin: 0 0 .5rem; }
-.disclaimer { max-width: 680px; margin-inline: auto !important; font-size: .82rem; opacity: .85; }
+.disclaimer { max-width: 680px; margin-inline: auto !important; font-size: .82rem; } /* sem opacity: manteria o contraste abaixo de 4.5:1 */
 
 .whatsapp-float {
   position: fixed;

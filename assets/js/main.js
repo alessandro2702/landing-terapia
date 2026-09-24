@@ -16,15 +16,36 @@
   /* 1. Progressive enhancement ------------------------------------------- */
   document.documentElement.classList.add('js');
 
-  /* 2. Header ao rolar ----------------------------------------------------- */
+  /* 2. Header ao rolar -----------------------------------------------------
+   * Em vez de ler window.scrollY a cada evento de scroll (o que força o
+   * navegador a recalcular o layout — "forced reflow" no Lighthouse), um
+   * elemento invisível de 1px é posicionado a 40px do topo e observado com
+   * IntersectionObserver: quando ele sai da tela, a página foi rolada.
+   */
   var header = document.querySelector('.site-header');
+  var isScrolled = false;
 
   function updateHeader() {
-    if (!header) return;
-    header.classList.toggle('is-scrolled', window.scrollY > 40);
+    if (header) header.classList.toggle('is-scrolled', isScrolled);
   }
-  window.addEventListener('scroll', updateHeader, { passive: true });
-  updateHeader();
+
+  if (header && 'IntersectionObserver' in window) {
+    var sentinel = document.createElement('div');
+    sentinel.setAttribute('aria-hidden', 'true');
+    sentinel.style.cssText = 'position:absolute;top:40px;left:0;width:1px;height:1px;pointer-events:none;';
+    document.body.prepend(sentinel);
+
+    new IntersectionObserver(function (entries) {
+      isScrolled = !entries[0].isIntersecting;
+      updateHeader();
+    }).observe(sentinel);
+  } else if (header) {
+    // Fallback para navegadores sem IntersectionObserver
+    window.addEventListener('scroll', function () {
+      isScrolled = window.scrollY > 40;
+      updateHeader();
+    }, { passive: true });
+  }
 
   /* 3. Menu mobile --------------------------------------------------------- */
   var toggle = document.querySelector('.nav-toggle');
